@@ -1,0 +1,12 @@
+target/*
+!target/generated-sources/
+!.mvn/wrapper/maven-wrapper.jar
+dependency-reduced-pom.xml
+
+### IntelliJ IDEA ###
+.idea/**
+/.idea/**
+!.idea/codeStyles
+*.iml
+*.ipr
+*.iws
