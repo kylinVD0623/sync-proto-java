@@ -2,7 +2,7 @@ name: Run Maven Build
 
 on:
   repository_dispatch:
-    types: [maven_build]
+    types: [sync_proto]
 
 jobs:
   builds:
@@ -11,6 +11,17 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+
+    - name: Checkout Source Repository
+      uses: actions/checkout@v2
+      with:
+        repository: kylinVD0623/sync-proto-go
+        token: ${{ secrets.TARGET_REPO_ACCESS_TOKEN }}
+        path: sync-proto-go
+
+    - name: Sync Protobuf Files
+      run: |
+        rsync -avz --delete sync-proto-go/grpc/cloud/ src/main/proto/grpc/cloud/
 
     - name: Set up JDK 11
       uses: actions/setup-java@v2
