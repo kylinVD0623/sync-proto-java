@@ -17,11 +17,12 @@ jobs:
       with:
         repository: kylinVD0623/sync-proto-go
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        ref: main
         path: sync-proto-go
 
     - name: Sync Protobuf Files
       run: |
-        rsync -av --delete --include='*.proto' --exclude='*' sync-proto-go/grpc/cloud/ src/main/proto/grpc/cloud/
+        cp -R sync-proto-go/grpc/cloud/*.proto src/main/proto/grpc/cloud/
 
     # - name: Clear Source Repository
     #   run: |
