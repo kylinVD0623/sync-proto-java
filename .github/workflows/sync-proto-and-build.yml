@@ -42,12 +42,20 @@ jobs:
     - name: Commit and Push Changes
       env:
         SYNC_BRANCH_NAME: config/auto-sync-proto
-        GH_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git checkout -b ${SYNC_BRANCH_NAME}
         git add .
-        git commit -m "Sync Proto files from Github Actions" || true # Don't fail if nothing to commit
-        git push --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
+        git commit -m "Sync Proto Files from Github Actions" || true # Don't fail if nothing to commit
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        commit-message: "Sync Proto Files from Github Actions"
+        title: "Sync Proto Files from Github Actions"
+        body: "This pull request updates proto files from sync-proto-go"
+        branch: "config/auto-sync-proto"
+        base: "main"
         
