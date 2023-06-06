@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checkout Target Repository
       uses: actions/checkout@v2
+      with:
+        path: sync-proto-java
 
     - name: Checkout Source Repository
       uses: actions/checkout@v2
@@ -22,7 +24,7 @@ jobs:
 
     - name: Sync Protobuf Files
       run: |
-        cp -R sync-proto-go/grpc/cloud/*.proto src/main/proto/grpc/cloud/
+        cp -R sync-proto-go/grpc/cloud/*.proto sync-proto-java/src/main/proto/grpc/cloud/
 
     # - name: Clear Source Repository
     #   run: |
