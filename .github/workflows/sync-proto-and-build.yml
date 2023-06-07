@@ -24,7 +24,7 @@ jobs:
 
     - name: Sync Protobuf Files
       run: |
-        cp -R sync-proto-go/grpc/cloud/*.proto /src/main/proto/grpc/cloud/
+        cp -R sync-proto-go/grpc/cloud/*.proto src/main/proto/grpc/cloud/
 
     # - name: Clear Source Repository
     #   run: |
