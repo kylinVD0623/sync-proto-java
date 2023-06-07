@@ -60,6 +60,7 @@ jobs:
         SYNC_BRANCH_NAME: config/auto-sync-proto
         GH_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
       run: |
+        cd sync-proto-java
         git add src/main/proto/grpc/cloud/*
         git commit -m "Sync Proto Files from Github Actions" || true # Don't fail if nothing to commit
         git push --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
