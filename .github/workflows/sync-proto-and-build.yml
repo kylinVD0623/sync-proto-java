@@ -64,12 +64,18 @@ jobs:
         git commit -m "Sync Proto Files from Github Actions" || true # Don't fail if nothing to commit
         git push --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
 
-    - name: Install gh cli for creating PR
-      run: |
-        curl -sSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo apt-key add -
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-        sudo apt update
-        sudo apt install gh -y
+    - name: Auto Create Pull Request
+      uses: desbravacloud/action-create-pull-requests@v1.0.0
+      with:
+        # Origin branch. If blank it will assume the workflow branch.
+        origin-branch: config/auto-sync-proto
+        # Target branch
+        target-branch: main
+        # PR title
+        custom-title: "Sync Proto Files from Github Actions"
+        # PR body message
+        custom-body: "This pull request updates proto files from sync-proto-go"
+
 
 
     # - name: Create Pull Request
