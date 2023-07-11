@@ -59,10 +59,10 @@ jobs:
         SYNC_BRANCH_NAME: config/auto-sync-proto
         GH_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
       run: |
-        git pull --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
         git add src/main/proto/grpc/cloud/*
         git add target/generated-sources/*
         git commit -m "Sync Proto Files from Github Actions" || true # Don't fail if nothing to commit
+        git pull --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
         git push --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
 
     - name: Auto Create Pull Request
