@@ -64,6 +64,18 @@ jobs:
         git commit -m "Sync Proto Files from Github Actions" || true # Don't fail if nothing to commit
         git push --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
 
+    - name: Install hub
+      run: |
+        curl -sSL https://github.com/github/hub/raw/master/script/get | bash
+        sudo mv ~/bin/hub /usr/local/bin/
+
+    - name: Create Pull Request
+      env:
+        SYNC_BRANCH_NAME: config/auto-sync-proto
+      run: |
+        hub pull-request -m "Auto-generated pull request" -b main -h ${SYNC_BRANCH_NAME}
+
+
     # - name: Create Pull Request
     #   uses: peter-evans/create-pull-request@v3
     #   with:
