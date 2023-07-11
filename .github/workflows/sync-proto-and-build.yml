@@ -62,7 +62,6 @@ jobs:
         git add src/main/proto/grpc/cloud/*
         git add target/generated-sources/*
         git commit -m "Sync Proto Files from Github Actions" || true # Don't fail if nothing to commit
-        git pull --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
         git push --set-upstream origin HEAD:${SYNC_BRANCH_NAME}
 
     - name: Auto Create Pull Request
@@ -76,7 +75,4 @@ jobs:
         custom-title: "Sync Proto Files from Github Actions"
         # PR body message
         custom-body: "This pull request updates proto files from sync-proto-go"
-
-
-
-        
+       
