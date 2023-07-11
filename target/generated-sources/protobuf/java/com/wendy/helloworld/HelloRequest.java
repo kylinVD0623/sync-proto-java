@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
   }
   private HelloRequest() {
     name_ = "";
+    age_ = "";
+    aaa_ = "";
   }
 
   @java.lang.Override
@@ -86,6 +88,82 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object age_;
+  /**
+   * <code>string age = 2;</code>
+   * @return The age.
+   */
+  @java.lang.Override
+  public java.lang.String getAge() {
+    java.lang.Object ref = age_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      age_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string age = 2;</code>
+   * @return The bytes for age.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAgeBytes() {
+    java.lang.Object ref = age_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      age_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AAA_FIELD_NUMBER = 3;
+  private volatile java.lang.Object aaa_;
+  /**
+   * <code>string aaa = 3;</code>
+   * @return The aaa.
+   */
+  @java.lang.Override
+  public java.lang.String getAaa() {
+    java.lang.Object ref = aaa_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aaa_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string aaa = 3;</code>
+   * @return The bytes for aaa.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAaaBytes() {
+    java.lang.Object ref = aaa_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      aaa_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -103,6 +181,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(age_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, age_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aaa_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aaa_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -114,6 +198,12 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(age_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, age_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aaa_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, aaa_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -132,6 +222,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getAge()
+        .equals(other.getAge())) return false;
+    if (!getAaa()
+        .equals(other.getAaa())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -145,6 +239,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + AGE_FIELD_NUMBER;
+    hash = (53 * hash) + getAge().hashCode();
+    hash = (37 * hash) + AAA_FIELD_NUMBER;
+    hash = (53 * hash) + getAaa().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -279,6 +377,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
+      age_ = "";
+
+      aaa_ = "";
+
       return this;
     }
 
@@ -306,6 +408,8 @@ private static final long serialVersionUID = 0L;
     public com.wendy.helloworld.HelloRequest buildPartial() {
       com.wendy.helloworld.HelloRequest result = new com.wendy.helloworld.HelloRequest(this);
       result.name_ = name_;
+      result.age_ = age_;
+      result.aaa_ = aaa_;
       onBuilt();
       return result;
     }
@@ -358,6 +462,14 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
+      if (!other.getAge().isEmpty()) {
+        age_ = other.age_;
+        onChanged();
+      }
+      if (!other.getAaa().isEmpty()) {
+        aaa_ = other.aaa_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -389,6 +501,16 @@ private static final long serialVersionUID = 0L;
 
               break;
             } // case 10
+            case 18: {
+              age_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 18
+            case 26: {
+              aaa_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -477,6 +599,158 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object age_ = "";
+    /**
+     * <code>string age = 2;</code>
+     * @return The age.
+     */
+    public java.lang.String getAge() {
+      java.lang.Object ref = age_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        age_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string age = 2;</code>
+     * @return The bytes for age.
+     */
+    public com.google.protobuf.ByteString
+        getAgeBytes() {
+      java.lang.Object ref = age_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        age_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string age = 2;</code>
+     * @param value The age to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAge(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      age_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string age = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAge() {
+      
+      age_ = getDefaultInstance().getAge();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string age = 2;</code>
+     * @param value The bytes for age to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      age_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object aaa_ = "";
+    /**
+     * <code>string aaa = 3;</code>
+     * @return The aaa.
+     */
+    public java.lang.String getAaa() {
+      java.lang.Object ref = aaa_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aaa_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string aaa = 3;</code>
+     * @return The bytes for aaa.
+     */
+    public com.google.protobuf.ByteString
+        getAaaBytes() {
+      java.lang.Object ref = aaa_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        aaa_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string aaa = 3;</code>
+     * @param value The aaa to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAaa(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      aaa_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string aaa = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAaa() {
+      
+      aaa_ = getDefaultInstance().getAaa();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string aaa = 3;</code>
+     * @param value The bytes for aaa to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAaaBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      aaa_ = value;
       onChanged();
       return this;
     }
