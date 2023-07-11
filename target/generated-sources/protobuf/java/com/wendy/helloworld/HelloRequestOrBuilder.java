@@ -18,4 +18,40 @@ public interface HelloRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>string age = 2;</code>
+   * @return The age.
+   */
+  java.lang.String getAge();
+  /**
+   * <code>string age = 2;</code>
+   * @return The bytes for age.
+   */
+  com.google.protobuf.ByteString
+      getAgeBytes();
+
+  /**
+   * <code>string aaa = 3;</code>
+   * @return The aaa.
+   */
+  java.lang.String getAaa();
+  /**
+   * <code>string aaa = 3;</code>
+   * @return The bytes for aaa.
+   */
+  com.google.protobuf.ByteString
+      getAaaBytes();
+
+  /**
+   * <code>string bbb = 4;</code>
+   * @return The bbb.
+   */
+  java.lang.String getBbb();
+  /**
+   * <code>string bbb = 4;</code>
+   * @return The bytes for bbb.
+   */
+  com.google.protobuf.ByteString
+      getBbbBytes();
 }

@@ -34,13 +34,15 @@ public final class HelloWorldProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033grpc/cloud/helloworld.proto\022\nhelloworl" +
-      "d\"\034\n\014HelloRequest\022\014\n\004name\030\001 \001(\t\"\035\n\nHello" +
-      "Reply\022\017\n\007message\030\001 \001(\t2I\n\007Greeter\022>\n\010Say" +
+      "d\"C\n\014HelloRequest\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002" +
+      " \001(\t\022\013\n\003aaa\030\003 \001(\t\022\013\n\003bbb\030\004 \001(\t\"\035\n\nHelloR" +
+      "eply\022\017\n\007message\030\001 \001(\t2\216\001\n\007Greeter\022>\n\010Say" +
       "Hello\022\030.helloworld.HelloRequest\032\026.hellow" +
-      "orld.HelloReply\"\000B`\n\024com.wendy.helloworl" +
-      "dB\017HelloWorldProtoP\001Z5google.golang.org/" +
-      "grpc/examples/helloworld/helloworldb\006pro" +
-      "to3"
+      "orld.HelloReply\"\000\022C\n\rSayHelloAgain\022\030.hel" +
+      "loworld.HelloRequest\032\026.helloworld.HelloR" +
+      "eply\"\000B`\n\024com.wendy.helloworldB\017HelloWor" +
+      "ldProtoP\001Z5google.golang.org/grpc/exampl" +
+      "es/helloworld/helloworldb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -51,7 +53,7 @@ public final class HelloWorldProto {
     internal_static_helloworld_HelloRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_helloworld_HelloRequest_descriptor,
-        new java.lang.String[] { "Name", });
+        new java.lang.String[] { "Name", "Age", "Aaa", "Bbb", });
     internal_static_helloworld_HelloReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_helloworld_HelloReply_fieldAccessorTable = new
