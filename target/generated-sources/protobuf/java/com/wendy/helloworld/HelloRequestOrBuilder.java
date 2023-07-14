@@ -42,16 +42,4 @@ public interface HelloRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAaaBytes();
-
-  /**
-   * <code>string bbb = 4;</code>
-   * @return The bbb.
-   */
-  java.lang.String getBbb();
-  /**
-   * <code>string bbb = 4;</code>
-   * @return The bytes for bbb.
-   */
-  com.google.protobuf.ByteString
-      getBbbBytes();
 }

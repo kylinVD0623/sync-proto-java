@@ -33,7 +33,6 @@ message HelloRequest {
   string name = 1;
   string age = 2;
   string aaa = 3;
-  string bbb = 4;
 }
 
 // The response message containing the greetings

@@ -23,7 +23,6 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     age_ = "";
     aaa_ = "";
-    bbb_ = "";
   }
 
   @java.lang.Override
@@ -165,44 +164,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BBB_FIELD_NUMBER = 4;
-  private volatile java.lang.Object bbb_;
-  /**
-   * <code>string bbb = 4;</code>
-   * @return The bbb.
-   */
-  @java.lang.Override
-  public java.lang.String getBbb() {
-    java.lang.Object ref = bbb_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      bbb_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string bbb = 4;</code>
-   * @return The bytes for bbb.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBbbBytes() {
-    java.lang.Object ref = bbb_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      bbb_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -226,9 +187,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aaa_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aaa_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bbb_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bbb_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -246,9 +204,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aaa_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, aaa_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bbb_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bbb_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -271,8 +226,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAge())) return false;
     if (!getAaa()
         .equals(other.getAaa())) return false;
-    if (!getBbb()
-        .equals(other.getBbb())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -290,8 +243,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAge().hashCode();
     hash = (37 * hash) + AAA_FIELD_NUMBER;
     hash = (53 * hash) + getAaa().hashCode();
-    hash = (37 * hash) + BBB_FIELD_NUMBER;
-    hash = (53 * hash) + getBbb().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -430,8 +381,6 @@ private static final long serialVersionUID = 0L;
 
       aaa_ = "";
 
-      bbb_ = "";
-
       return this;
     }
 
@@ -461,7 +410,6 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.age_ = age_;
       result.aaa_ = aaa_;
-      result.bbb_ = bbb_;
       onBuilt();
       return result;
     }
@@ -522,10 +470,6 @@ private static final long serialVersionUID = 0L;
         aaa_ = other.aaa_;
         onChanged();
       }
-      if (!other.getBbb().isEmpty()) {
-        bbb_ = other.bbb_;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -567,11 +511,6 @@ private static final long serialVersionUID = 0L;
 
               break;
             } // case 26
-            case 34: {
-              bbb_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -812,82 +751,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       aaa_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object bbb_ = "";
-    /**
-     * <code>string bbb = 4;</code>
-     * @return The bbb.
-     */
-    public java.lang.String getBbb() {
-      java.lang.Object ref = bbb_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bbb_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string bbb = 4;</code>
-     * @return The bytes for bbb.
-     */
-    public com.google.protobuf.ByteString
-        getBbbBytes() {
-      java.lang.Object ref = bbb_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        bbb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string bbb = 4;</code>
-     * @param value The bbb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBbb(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      bbb_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bbb = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBbb() {
-      
-      bbb_ = getDefaultInstance().getBbb();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bbb = 4;</code>
-     * @param value The bytes for bbb to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBbbBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      bbb_ = value;
       onChanged();
       return this;
     }
