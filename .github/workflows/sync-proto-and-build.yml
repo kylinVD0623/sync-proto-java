@@ -22,6 +22,17 @@ jobs:
         ref: main
         path: sync-proto-go
 
+    - name: Config Git
+      env:
+        SYNC_BRANCH_NAME: config/auto-sync-proto
+      run: |
+        git config --global user.name "Github Actions"
+        git config --global user.email "actions@github.com"
+        git checkout main
+        git fetch origin
+        git checkout ${SYNC_BRANCH_NAME}
+        git pull
+
     - name: Sync Protobuf Files
       run: |
         cp -R sync-proto-go/grpc/cloud/*.proto src/main/proto/grpc/cloud/
@@ -41,17 +52,6 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-
-    - name: Config Git
-      env:
-        SYNC_BRANCH_NAME: config/auto-sync-proto
-      run: |
-        git config --global user.name "Github Actions"
-        git config --global user.email "actions@github.com"
-        git checkout main
-        git fetch origin
-        git checkout ${SYNC_BRANCH_NAME}
-        git pull
 
     - name: Commit and Push Changes
       env:
