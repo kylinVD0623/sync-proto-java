@@ -1,0 +1,14 @@
+name: Run Maven Build and Publish
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  maven-build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
