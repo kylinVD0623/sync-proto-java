@@ -9,8 +9,12 @@ jobs:
   maven-build:
     runs-on: self-hosted
 
+    container:
+      image: maven:3.9.1-sapmachine-11
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+
+      - name: Maven Build
+        run: mvn clean install
