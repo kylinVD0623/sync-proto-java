@@ -1,9 +1,6 @@
 name: Run Maven Build and Publish
 
-on:
-  push:
-    branches:
-      - "dev"
+on: push
 
 jobs:
   maven-build:
