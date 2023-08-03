@@ -3,7 +3,8 @@ name: Run Maven Build and Publish
 on:
   push:
     branches:
-      - "main"
+      - test
+#      - "main"
 
 jobs:
   maven-build:
