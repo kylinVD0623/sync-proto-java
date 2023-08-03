@@ -1,10 +1,6 @@
 name: Run Maven Build and Publish
 
-on:
-  push:
-    branches:
-      - "config/auto-sync-proto"
-#      - "main"
+on: push
 
 jobs:
   maven-build:
