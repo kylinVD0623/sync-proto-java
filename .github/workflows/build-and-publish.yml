@@ -3,12 +3,11 @@ name: Run Maven Build and Publish
 on:
   push:
     branches:
-      - test
-#      - "main"
+      - "main"
 
 jobs:
   maven-build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     container:
       image: maven:3.9.1-sapmachine-11
@@ -16,14 +15,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Cache local Maven repository
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
 
       - name: Maven Build
         run: mvn clean install
