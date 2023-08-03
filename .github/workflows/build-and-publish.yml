@@ -3,7 +3,8 @@ name: Run Maven Build and Publish
 on:
   push:
     branches:
-      - "main"
+      - "config/auto-sync-proto"
+#      - "main"
 
 jobs:
   maven-build:
